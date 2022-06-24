@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "4b3eb459-7100-42b1-b1ee-4220597e387c",
+		"name": "microservice article",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}/posts/home",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"posts",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Membuat Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Lorem Ipsum dolor sit amet",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "postingan 1",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Publish",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/posts/article",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"posts",
+						"article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan Article Limit dan Offset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/posts/article/show/5/0",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"posts",
+						"article",
+						"show",
+						"5",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan Article By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/posts/article/1/edit",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"posts",
+						"article",
+						"1",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mengubah Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Lorem Ipsum dolor sit amet",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "postingan 6",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Draft",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/posts/article/1/update",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"posts",
+						"article",
+						"1",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menghapus Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/posts/article/1/destroy",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"posts",
+						"article",
+						"1",
+						"destroy"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost/microservice-article/public/",
+			"type": "string"
+		}
+	]
+}
