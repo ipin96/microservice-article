@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "4b3eb459-7100-42b1-b1ee-4220597e387c",
 		"name": "microservice article",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8073853"
 	},
 	"item": [
 		{
@@ -50,7 +51,7 @@
 						},
 						{
 							"key": "category",
-							"value": "postingan 1",
+							"value": "postingan 2",
 							"type": "text"
 						},
 						{
@@ -174,6 +175,26 @@
 						"article",
 						"1",
 						"destroy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan Article By Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/posts/article/publish/get",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"posts",
+						"article",
+						"publish",
+						"get"
 					]
 				}
 			},

@@ -22,6 +22,7 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'posts'], function () use ($router) {
     $router->get('home', 'PostController@index');
     $router->get('article/show/{limit}/{offset}', 'PostController@show');
+    $router->get('article/{status}/get', 'PostController@get');
     $router->get('article/{id}/edit', 'PostController@edit');
     $router->post('article', 'PostController@store');
     $router->post('article/{id}/destroy', 'PostController@destroy');

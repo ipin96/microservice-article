@@ -18,6 +18,24 @@ class PostController extends Controller
         return 'Microservice Article';   
     }
 
+    public function get($status)
+    {
+        $posts = Post::where('status', $status)->orderBy('created_at', 'DESC')->get();
+        if($posts->isEmpty()){
+            return response()->json([
+                'code'      => 200,
+                'message'   => 'Data kosong',
+                'response'  => $posts
+            ], 200);
+        }else{
+            return response()->json([
+                'code'      => 200,
+                'message'   => 'Data ditemukan',
+                'response'  => $posts
+            ], 200);
+        }
+    }
+
     public function show($limit, $offset)
     {
         $posts = Post::orderBy('created_at', 'DESC')->limit($limit)->offset($offset)->get();
